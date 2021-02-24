@@ -1,0 +1,15 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using WebApplication13.Models
+@using WebApplication13.Data
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+@inject ApplicationDbContext context
+
+<ul class="navbar-nav">
+    @if (context.movies.Count() > 10)
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="SortedList">My sorted movies</a>
+        </li>
+    }
+</ul>

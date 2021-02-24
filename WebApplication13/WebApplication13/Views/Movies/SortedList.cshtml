@@ -1,0 +1,29 @@
+﻿@model IEnumerable<WebApplication13.Models.Movie>
+
+@{
+    ViewData["Title"] = "SortedList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>My Movies Sorted by Title</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+        
+        </tr>
+}
+    </tbody>
+</table>
